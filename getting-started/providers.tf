@@ -1,4 +1,12 @@
 terraform {
+  cloud {
+    organization = "skqist225"
+
+    workspaces {
+      name = "getting-started"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -8,12 +16,12 @@ terraform {
 }
 
 provider "aws" {
-  profile = "default"
+  # profile = "default"
   region  = "ap-southeast-1"
 }
 
-provider "aws" {
-  profile = "default"
-  region  = "eu-west-1"
-  alias   = "eu"
-}
+# provider "aws" {
+#   profile = "default"
+#   region  = "eu-west-1"
+#   alias   = "eu"
+# }
